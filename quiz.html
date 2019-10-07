@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>Confidence Quiz</title>
+        <h1>Confidence Quiz :)</h1> <br>
+    </head>
+    <body>
+
+    <form action="quiz.php" method="post">
+
+
+        <h2 id="question" style="display: inline">Question 1: Who has the best hair? </h2><br>
+        <input type="radio" name="answer1" value="a. Repunzel"> a) Repunzel<br>
+        <input type="radio" name="answer1" value="b. Kim K"> b) Kim K<br>
+        <input type="radio" name="answer1" value="c. Guy Fieri"> c) Guy Fieri<br>
+        <input type="radio" name="answer1" value="d. you"> d) you<br><br><br>
+
+        <h2 id="question" style="display: inline">Question 2: Who has the brightest smile?</h2><br>
+        <input type="radio" name="answer2" value="a. dentists"> a) dentists<br>
+        <input type="radio" name="answer2" value="b. Joker"> b) Joker<br>
+        <input type="radio" name="answer2" value="c. you"> c) you<br>
+        <input type="radio" name="answer2" value="d. Miley Cyrus"> d) Miley Cyrus<br><br><br>
+
+        <h2 id="question" style="display: inline">Question 3: Who can do anything they set their mind to?</h2><br>
+        <input type="radio" name="answer3" value="a. you"> a) you<br>
+        <input type="radio" name="answer3" value="b. Bill Gates"> b) Bill Gates<br>
+        <input type="radio" name="answer3" value="c. Captain Marvel"> c) Captain Marvel<br>
+        <input type="radio" name="answer3" value="d. Thomas Edison"> d) Thomas Edison<br><br><br>
+
+        <h2 id="question" style="display: inline">Question 4: Who is the funniest person alive?</h2><br>
+        <input type="radio" name="answer4" value="a. Joe Rogan"> a) Joe Rogan<br>
+        <input type="radio" name="answer4" value="b. Gordan Ramsey"> b) Gordan Ramsey<br>
+        <input type="radio" name="answer4" value="c. eter Griffin"> c) Peter Griffin<br>
+        <input type="radio" name="answer4" value="d. you"> d) you<br><br><br>
+
+        <h2 id="question" style="display: inline">Question 5: Who is the smartest person alive?</h2><br>
+        <input type="radio" name="answer5" value="a. Nikoli Tesla"> a) Nikoli Tesla<br>
+        <input type="radio" name="answer5" value="b. you"> b) you<br>
+        <input type="radio" name="answer5" value="c. Einstein"> c) Einstein<br>
+        <input type="radio" name="answer5" value="d. Bill Gates"> d) Bill Gates<br><br><br>
+
+        <input type = "submit">
+       <!-- <button onclick = "state.submit()"  >Submit</button><br><br>
+       <p type="text" id="score" name="score" value=""></p> -->
+</form>
+<!--
+       <script>
+        var state = {
+            submit: function(){
+                let val = 0;
+                if(document.querySelector('input[name="answer1"]:checked').value == 'd')
+                {
+                    val +=1;
+                   // document.getElementById("answer1").innerHTML= (document.querySelector('input[name="answer1"]:checked').value + " test1 " + val);
+                }
+                if(document.querySelector('input[name="answer2"]:checked').value == 'c')
+                {
+                    val ++;
+                   // document.getElementById("answer2").innerHTML= (document.querySelector('input[name="answer2"]:checked').value+" test2 " + val);
+                }
+                if(document.querySelector('input[name="answer3"]:checked').value == 'a')
+                {
+                    val ++;
+                   // document.getElementById("answer3").innerHTML= (document.querySelector('input[name="answer3"]:checked').value+" test3 " +val);
+                }
+                if(document.querySelector('input[name="answer4"]:checked').value == 'd')
+                {
+                    val ++;
+                   // document.getElementById("answer4").innerHTML= (document.querySelector('input[name="answer4"]:checked').value+" test4 " +val);
+                }
+                if(document.querySelector('input[name="answer5"]:checked').value == 'b')
+                {
+                    val ++;
+                   // document.getElementById("answer5").innerHTML= (document.querySelector('input[name="answer5"]:checked').value+" test5 " +val);
+                }
+                var x = (val/5)*100;
+                document.getElementById("score").innerHTML= ("Score: " + (val/5)*100 + "%");
+                      document.getElementById("score").value = x;
+
+            }
+        }
+
+        </script>
+    </form> -->
+    </body>
+</html>

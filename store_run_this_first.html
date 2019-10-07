@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <h1>shop</h1> <br>
+        <!-- <link href="store.css"
+        rel="stylesheet"
+        type="text/css"/> -->
+    </head>
+    <body bgcolor="black" style = "background-image: url('door.png');background-position:center;background-repeat: no-repeat; background-size:30%;">
+
+        <!-- <img src = "door.png" style = "display:block;margin-left:auto;margin-right:auto;width: 30%;"></img> -->
+        <h1 style= "margin-left:10%;color:white;">Pssst...... </h1>
+
+        <h1 style= "margin-left:15%;color:white;">Are you a member? </h1>
+        <input style="margin-left:15%;" type="text" id="user" value = "">
+
+        <h1  style= "color:white;margin-left:15%;">Enter the password </h1>
+        <input style=margin-left:15%; type="text" id="pass" value = ""><br><br>
+        <form onsubmit="return state.verify()" action="store.html"><button style="margin-left:15%;">Enter</button> </form>
+        <h3 type="text" id="tot2" name="tot2" value="" style = "margin-left:75%;"></h3>
+
+       <script>
+           let check1= "false";
+           let check2= "false";
+           let check3= "false";
+
+
+            var state = {
+                verify: function(){
+                    var user = document.getElementById("user").value;
+                    var arr = user.split("");
+                    var pass = document.getElementById("pass").value;
+
+                    for(var i =0; i < arr.length; i++)
+                    {
+                        document.getElementById("tot2").innerHTML+= (arr[i]+",");
+
+                    }
+                    for(var i =0; i < arr.length; i++)
+                    {
+                        // if(arr.length ==0)
+                        // {
+                        //     alert("I am no fool, Imposter");
+                        //     // return(false);
+                        // }
+                        if(arr[i] == '@')
+                        {
+                            check1="true";
+                        }
+                        if(arr[i] == '.')
+                        {
+                            check2="true";
+                        }
+                        if(arr[i] == 'c' && arr[i+1] == 'o' && arr[i+2] == 'm')
+                        {
+                            check3="true";
+                        }
+                    }
+                    if(check1=="true" &&check2=="true" &&check3=="true")
+                        {
+                            alert("welcome, " +user);
+                             return(true);
+                        }
+                    // if(array[array.length]!='m')
+                    else
+                        {
+                        alert("I am no fool, Imposter");
+                             return(false);
+                        }
+
+
+                }
+            }
+        </script>
+        </body>
+        </html>

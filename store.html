@@ -1,0 +1,115 @@
+<html>
+    <head>
+       <title>Kiri's shop</title>
+        <link href="store.css"
+        rel="stylesheet"
+        type="text/css"/>
+    </head>
+
+    <body>
+            <!-- <h2  style= "position:relative;color:white;left:33%; top:10%;">Choose wisely...<br> or buy my whole stock,<br> up to you... </h2> -->
+            <form action="receipt.php" method="post">
+
+
+
+       <h1 id="question" style="margin-left:70%;color:white;">Totals:</h1>
+         <h2 id="question" style="margin-left:70%;">Special Pile of Dirt:</h2>
+        <h3 type="text" id="tot1" name="tot1" value="" style = "margin-left:75%;color:white;">0 : $0</h3>
+        <hr style = "margin-left:68%;color:white; width:15%"></hr><br>
+       <h2 id="question" style="margin-left:70%;color:white;">Tiny Robo-Rex:</h2>
+        <h3 type="text" id="tot2" name="tot2" value="" style = "color:white;margin-left:75%;">0 : $0</h3>
+       <!-- // <h2  style= "color:white;left:18%; margin-top:15%;">Choose wisely... or buy my whole stock, up to you... </h2> -->
+
+        <hr style = "margin-left:68%;color:white; width:15%"></hr><br>
+       <h2 id="question" style="margin-left:70%;">Sceptor of World Domination:</h2>
+        <h3 type="text" id="tot3" name="tot3" value="" style = "color:white;margin-left:75%;">0 : $0</h3>
+        <hr style = "margin-left:68%;color:white; width:15%"></hr>
+
+
+             <button onclick = "state.reset()" style = "margin-left:75%;" >Reset</button><br><br>
+
+        <h2 id="question" style="margin-left:70%;color:white;">Select Delivery method:</h2>
+  <div>
+      <input type="radio" onclick = "state.tax()" name="del" value=0 style="margin-left:70%;color:white;">Free 7 day<br>
+        <input type="radio" onclick = "state.tax()" name="del" value=50 style="margin-left:70%;color:white;"> $50.00 over night <br>
+        <input type="radio" onclick = "state.tax()" name="del" value=5 style="margin-left:70%;background:white;">$5.00 three day<br>
+  </div>
+        <img src = "dirt.png" onclick = "state.add1()" style = "position: relative; width:7%; height:10%; left:17%;"></img>
+        <img src = "trex.png" onclick = "state.add2()" style = "position: relative; width:5%; height:10%; left:22%;"></img>
+        <img src = "sceptor.png"  onclick = "state.add3()" style = "position: relative; width:7%; height:10%; left:27%;"></img>
+
+        <h1 id="question" style="margin-left:70%;color:white;">Sub-total:</h1>
+        <h3 type="text" id="sub" name="sub" value="document.getElementById('sub').innerHTML" style = "margin-left:77%;color:white;">$0</h3>
+
+<h3 type="text" id="sub" name="sub" style = "margin-left:70%;color:white;">Enter your name:</h3>
+      <input type="text" name="name" style = "margin-left:70%;"><br>
+      <h3 type="text" id="sub" name="sub" value="document.getElementById('sub').innerHTML" style = "margin-left:70%;color:white;">Re-enter your username:</h3>
+
+      <input type="text" name="email"style = "margin-left:70%;">Submit Soul<br>
+
+        <input type="submit"style = "margin-left:85%;">
+       <!-- <button onclick = "state.deliv()" style = "margin-left:70%;" >Submit Soul</button><br><br> -->
+       <!-- <p type="text" id="answer" name="answer" value="" style = "margin-left:70%;">dfgfhjhgf</p> -->
+
+
+
+       <script>
+        let val1 = 0;
+        let val2= 0;
+        let val3=0;
+        let total =0;
+        var state = {
+            add1: function(){
+             // let val1=0;
+              val1++;
+              document.getElementById("tot1").innerHTML= (val1+ " : $"+ (val1*50));
+              document.getElementById("sub").innerHTML= ((val1*50) +(val2*360)+ (val3*500));
+              state.tax();
+            },
+            add2: function(){
+            //  let val2=0;
+              val2++;
+              document.getElementById("tot2").innerHTML= (val2+ " : $"+ (val2*360));
+              document.getElementById("sub").innerHTML= ((val1*50) +(val2*360)+ (val3*500));
+              state.tax();
+
+            },
+            add3: function(){
+           //   let val3=0;
+              val3++;
+              document.getElementById("tot3").innerHTML= (val3+ " : $"+ (val3*500));
+              document.getElementById("sub").innerHTML= ((val1*50) +(val2*360)+ (val3*500));
+            state.tax();
+            },
+            reset:function(){
+                val1=0;
+                document.getElementById("tot1").innerHTML= val1 +" : $0";
+                val2=0;
+                document.getElementById("tot2").innerHTML= val2 +" : $0";;
+                val3=0;
+                document.getElementById("tot3").innerHTML= val3 +" : $0";;
+                document.getElementById("sub").innerHTML= "$0";
+
+            },
+            deliv: function(){
+                var deliverytype = document.querySelector('input[name="del"]:checked').value;
+              // document.getElementById("answer").innerHTML= (deliverytype);
+
+            },
+            tax: function(){
+                // var deliverytype = deliverytype= document.querySelector('input[name="del"]:checked').value;
+                // var x= document.getElementById("sub").value;
+                // document.getElementById("sub").innerHTML =("$"+x +" + " +deliverytype);
+
+                var deliverytype = deliverytype= document.querySelector('input[name="del"]:checked').value;
+                var x= document.getElementById("sub").value;
+                document.getElementById("sub").innerHTML =("$"+ ((val1*50) +(val2*360)+ (val3*500)) +" + " +deliverytype);
+
+
+
+            }
+        }
+    </script>
+        </form>
+    </body>
+</html>

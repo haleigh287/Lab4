@@ -1,0 +1,24 @@
+body
+{
+    background-color: black;
+    background-image: url("l.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h2
+{
+    color: white;
+}
+
+/* input[type="radio"]:checked + label  */
+div
+{
+    color: white;
+}
+
+
+input
+{
+  color: white;
+}
